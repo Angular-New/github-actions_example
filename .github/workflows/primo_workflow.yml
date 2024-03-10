@@ -1,0 +1,11 @@
+name: primo_workflow
+
+on:
+  - push
+
+jobs:
+  run_primo_job:
+    runs-on: macos-latest
+    steps:
+      - name: Show system info
+        run: uname -a
