@@ -1,9 +1,13 @@
 name: Fourth Workflow
 
 on:
+  # Событие выполнения workflow
   workflow_run:
+    # Массив workflows с их идентификаторами
     workflows:
       - Third Workflow
+    # Состояние workflow - в данном случае состояние completed, то есть workflow завершен
+    # есть еще одно состояние workflow - in_progress
     types:
       - completed
 
