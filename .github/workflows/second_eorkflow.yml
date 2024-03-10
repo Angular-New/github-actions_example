@@ -1,0 +1,31 @@
+name: Second Workflow
+
+on:
+  - push
+
+jobs:
+  run-linux-runner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Show Ubuntu info
+        run: uname -a
+      - name: Show Node.js version
+        run: node -v
+  run-macos-runner:
+    runs-on: macos-latest
+    steps:
+      - name: Show MacOS info
+        run: uname -a
+      - name: Show Node.js version
+        run: node -v
+  run-windows-runner:
+    runs-on: windows-latest
+    # Текущий runner запустится только после успешного выполнения указанных ниже runners
+    needs:
+      - run-linux-runner
+      - run-macos-runner
+    steps:
+      - name: Show Node.js version
+        run: node -v
+      - name: Show final text
+        run: echo "Final text"
