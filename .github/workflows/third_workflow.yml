@@ -1,0 +1,12 @@
+name: Third Workflow
+
+on:
+  - push
+
+jobs:
+  run_copy_github-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4 # Запуск готового action для копирования файлов в runner
+      - name: Show current directory
+        run: ls -a
