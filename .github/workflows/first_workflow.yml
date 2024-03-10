@@ -1,0 +1,14 @@
+# Название (имя) workflow
+name: First Workflow
+
+# Событие
+on:
+  - push # событие push
+
+# Джобы
+jobs:
+  run-first-command: # Имя джобы
+    runs-on: ubuntu-latest # Какой runner использовать
+    steps: # Список шагов джобы
+      - name: Show text # Имя шага
+        run: echo "Hello from GitHub Actions" # Выполняемая команда шага
