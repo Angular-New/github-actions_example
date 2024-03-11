@@ -1,0 +1,21 @@
+# Events that trigger workflows
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#about-events-that-trigger-workflows
+
+name: Events Workflow
+
+on:
+  - push
+  - issues
+  - pull_request
+
+jobs:
+  run_events_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Event variables
+        # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#issues
+        # $GITHUB_SHA - last commit on default branch
+        # $GITHUB_REF - default branch
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REF
