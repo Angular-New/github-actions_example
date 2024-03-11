@@ -1,0 +1,16 @@
+name: Event Types
+
+on:
+  issues:
+    types: [edited, deleted]
+  pull_request:
+    types: [assigned, closed]
+
+jobs:
+  run_event_types:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Event Types
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REF
