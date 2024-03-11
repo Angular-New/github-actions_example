@@ -1,0 +1,14 @@
+name: Events Schedule
+
+on:
+  schedule:
+    - cron: "*/5 * * * MON"
+
+jobs:
+  run_event_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Events Schedule
+        run: |
+          echo $GITHUB_SHA
+          echo $GITHUB_REF
