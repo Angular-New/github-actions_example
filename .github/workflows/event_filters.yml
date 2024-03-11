@@ -1,0 +1,22 @@
+name: Events Filters
+
+on:
+  push:
+    # Фильтр по веткам - событие push сработает только на ветке main и исключит все ветки feature/
+    branches:
+      - main
+      - "!feature/**"
+    # Фильтр по тегам
+    # tags:
+    #  - "v1.*"
+    #  - "!v1.1.1"
+    # Фильтр только по указанным типам файлов
+    paths:
+      - "**.ts"
+
+jobs:
+  run_events_filters:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Events Filters
+        run: echo
