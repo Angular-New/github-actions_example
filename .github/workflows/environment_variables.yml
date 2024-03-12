@@ -20,7 +20,7 @@ jobs:
           STEP_WORKFLOW_VARIABLE: WORKFLOW 12 - STEP 12
         run: |
           echo $GITHUB_REF
-          echo "{{ github.ref }}"
+          echo "${{ github.ref }}"
           echo "${{ env.WORKFLOW_VARIABLE }}"
           echo $WORKFLOW_VARIABLE
           echo $JOB_VARIABLE
