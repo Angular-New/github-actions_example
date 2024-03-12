@@ -2,7 +2,7 @@ name: Context Actions
 
 on: push
 
-run-name: "Context Actions Info"
+run-name: "Context Actions Information"
 
 jobs:
   run_context:
