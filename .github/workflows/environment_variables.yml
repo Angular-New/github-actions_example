@@ -1,0 +1,27 @@
+name: Environment Variables
+
+run-name: Environment Variables
+
+on: push
+
+env:
+  WORKFLOW_VARIABLE: WORKFLOW 12
+
+jobs:
+  run_first_job:
+    runs-on: ubuntu-latest
+    env:
+      JOB_VARIABLE: JOB 23
+    steps:
+      - name: Env Vars
+        id: environment_variables
+        env:
+          STEP_VARIABLE: STEP 34
+          STEP_WORKFLOW_VARIABLE: WORKFLOW 12 - STEP 12
+        run: |
+          echo $GITHUB_REF
+          echo "{{ github.ref }}"
+          echo "{{ env.WORKFLOW_VARIABLE }}"
+          echo "{{ WORKFLOW_VARIABLE }}"
+          echo $JOB_VARIABLE
+          echo $STEP_VARIABLE
