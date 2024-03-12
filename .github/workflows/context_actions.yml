@@ -1,0 +1,17 @@
+name: Context Actions
+
+on: push
+
+run-name: "Context Actions Info"
+
+jobs:
+  run_context:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Context and Expressions
+        id: context-expressions
+        run: |
+          echo "${{ toJson(github) }}"
+          echo "${{ toJson(runner) }}"
+          echo "${{ toJson(job) }}"
+          echo "${{ toJson(steps) }}"
