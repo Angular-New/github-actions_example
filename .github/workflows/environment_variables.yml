@@ -21,7 +21,7 @@ jobs:
         run: |
           echo $GITHUB_REF
           echo "{{ github.ref }}"
-          echo "{{ env.WORKFLOW_VARIABLE }}"
-          echo "{{ WORKFLOW_VARIABLE }}"
+          echo "${{ env.WORKFLOW_VARIABLE }}"
+          echo $WORKFLOW_VARIABLE
           echo $JOB_VARIABLE
           echo $STEP_VARIABLE
