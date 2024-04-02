@@ -14,15 +14,15 @@ jobs:
       JOB_ENV: Job Value # Значение переменной JOB_ENV будет доступно в первом Job
     steps:
       - name: First Step
-        run: echo 'FIRST_STEP_VAR=First Step Value' >> '$GITHUB_ENV'
+        run: echo "FIRST_STEP_VAR=First Step Value" >> "$GITHUB_ENV"
       - name: Second Step
         env:
           SECOND_STEP_VAR: Second Step Value
         run: |
           echo $GITHUB_REF
-          echo '${{ github.ref }}' # Выводит значение переменной github.ref
-          echo $WF_GLOBAL_ENV # Выводит значение переменной WF_GLOBAL_ENV
-          echo '${{ env.WF_GLOBAL_ENV }}' # Выводит значение переменной WF_GLOBAL_ENV
-          echo $JOB_ENV # Выводит значение переменной JOB_ENV
-          echo $FIRST_STEP_VAR
+          echo "${{ github.ref }}"
+          echo $WF_GLOBAL_ENV
+          echo "${{ env.WF_GLOBAL_ENV }}"
+          echo $JOB_ENV
           echo $SECOND_STEP_VAR
+          echo $FIRST_STEP_VAR
