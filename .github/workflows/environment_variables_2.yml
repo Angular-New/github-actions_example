@@ -1,0 +1,25 @@
+name: Environment Variables 2
+
+run-name: Environment Variables 2
+
+on: push
+
+env:
+  WF_GLOBAL_ENV: Global Value # Глобальная переменная для всего ворфлоу
+
+jobs:
+  first_job_name:
+    runs-on: ubuntu-latest
+    env:
+      JOB_ENV: Job Value # Значение переменной JOB_ENV будет доступно в первом Job
+    steps:
+      - name: First Step
+        env:
+          STEP_ENV: Step Value # Значение переменной STEP_ENV будет доступно в первом Step
+        run: |
+          echo $GITHUB_REF
+          echo '${{ github.ref }}' # Выводит значение переменной github.ref
+          echo $WF_GLOBAL_ENV # Выводит значение переменной WF_GLOBAL_ENV
+          echo '${{ env.WF_GLOBAL_ENV }}' # Выводит значение переменной WF_GLOBAL_ENV
+          echo $JOB_ENV # Выводит значение переменной JOB_ENV
+          echo $STEP_ENV # Выводит значение переменной STEP_ENV
