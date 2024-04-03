@@ -1,0 +1,14 @@
+name: Environment Variables 3
+
+run-name: Variables && Secrects
+
+on: [push]
+
+jobs:
+  first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: first_step
+        run: |
+          echo "${{ vars.STATUS }}"
+          echo "${{ secrets.PASSWORD }}"
